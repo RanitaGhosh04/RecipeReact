@@ -6,7 +6,7 @@ const api = axios.create({
 
 const getAllCategories = async()=>{
     try{
-        const {data} = api.get('/categories.php')
+        const {data} = await api.get('/categories.php')
         return data
     }
     catch(e){
@@ -17,7 +17,7 @@ const getAllCategories = async()=>{
 
 const search = async(searchKey)=>{
     try{
-        const {data} = api.get(`/search.php?=${searchKey}`)
+        const {data} = await api.get(`/search.php?=${searchKey}`)
         return data
     }
     catch(e){
@@ -29,7 +29,7 @@ const search = async(searchKey)=>{
 
 const getMealsBasedOnCategories = async(categoryName)=>{
     try{
-        const {data} = api.get(`/filter.php?c=${categoryName}`)
+        const {data} = await api.get(`/filter.php?c=${categoryName}`)
         return data
     }
     catch(e){
@@ -41,7 +41,7 @@ const getMealsBasedOnCategories = async(categoryName)=>{
 
 const getMealDetails = async(mealId)=>{
     try{
-        const {data} = api.get(`lookup.php?i=${mealId}`)
+        const {data} = await api.get(`lookup.php?i=${mealId}`)
         return data
     }
     catch(e){
