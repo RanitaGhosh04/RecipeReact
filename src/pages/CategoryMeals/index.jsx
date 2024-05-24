@@ -1,8 +1,10 @@
 import React from 'react'
+import { useParams } from 'react-router-dom'
 
 const CategoryMeals = () => {
+  const {category} = useParams()
   return (
-    <div>CategoryMeals</div>
+    <h1>{category}</h1>
   )
 }
 
