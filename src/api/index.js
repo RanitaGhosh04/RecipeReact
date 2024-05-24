@@ -17,8 +17,8 @@ const getAllCategories = async()=>{
 
 const search = async(searchKey)=>{
     try{
-        const {data} = await api.get(`/search.php?=${searchKey}`)
-        return data
+        const {data} = await api.get(`/search.php?s=${searchKey}`)
+        return data?.meals??[]
     }
     catch(e){
         console.log(e)
@@ -42,7 +42,7 @@ const getMealsBasedOnCategories = async(categoryName)=>{
 const getMealDetails = async(mealId)=>{
     try{
         const {data} = await api.get(`lookup.php?i=${mealId}`)
-        return data
+        return data?.meals?.[0]??{}
     }
     catch(e){
         console.log(e)
