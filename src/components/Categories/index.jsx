@@ -13,15 +13,16 @@ const Categories = () => {
      getAllCategories().then(setCategories).catch(console.log)
     }, [])
 
-    const onCategoryClick1 = (category) =>{
+    const onCategoryClick = (category) =>{
         navigate(`/meal/category/${category}`)
     }
 
     return (
         <div>
+            <h1>Categories</h1>
             {categories.map(({strCategory,idCategory})=>
             <p key={idCategory}
-            onClick={()=> onCategoryClick1(strCategory)}
+            onClick={()=> onCategoryClick(strCategory)}
             >
                 {strCategory}
             </p>

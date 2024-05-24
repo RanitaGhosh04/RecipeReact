@@ -1,8 +1,10 @@
 import React from 'react'
+import { useParams } from 'react-router-dom'
 
 const ReceipeDetails = () => {
+  const {idMeal} = useParams()
   return (
-    <div>ReceipeDetails</div>
+    <div>{idMeal}</div>
   )
 }
 
