@@ -7,6 +7,7 @@ const api = axios.create({
 const getAllCategories = async()=>{
     try{
         const {data} = await api.get('/categories.php')
+        console.log(data);
         return data?.categories??[]
     }
     catch(e){
